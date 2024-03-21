@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AddListingService {
-  private myDB = 'https://real-state-fake-api.vercel.app/added';
-  private listingsDB = 'https://real-state-fake-api.vercel.app/listings';
-  private searchDB = 'https://real-state-fake-api.vercel.app/search';
+  private myDB = 'https://real-state-fakeapi.onrender.com/added';
+  private listingsDB = 'https://real-state-fakeapi.onrender.com/listings';
+  private searchDB = 'https://real-state-fakeapi.onrender.com/search';
 
   constructor(private http: HttpClient) {}
 
