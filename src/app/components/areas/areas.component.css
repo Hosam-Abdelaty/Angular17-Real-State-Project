@@ -1,0 +1,39 @@
+.header{
+color: #4361EE
+}
+
+.firstimg{
+position: relative;
+}
+.firstimg :hover{
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(33, 6, 71, 0.7);
+
+    /* transform: scale(1.1) 2s; */
+}
+.paragraph{
+position: absolute;
+bottom: 45px;
+left: 20px;
+color: aliceblue;
+}
+.paragraphtwo{
+position: absolute; 
+ bottom: 10px;
+left: 20px;
+color: aliceblue; 
+}
+
+li{
+    list-style-type: none;
+}
+.shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* x-offset y-offset blur color */
+}
+.limit{
+    height: 350px;
+}
+
+.container img {
+    cursor: pointer;
+}
