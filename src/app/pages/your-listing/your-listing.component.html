@@ -1,9 +1,9 @@
 <div class="container">
   <div>
-    <h1 style="color: #3A0CA3;">Your Listing</h1>
+    <h1 style="color: #3a0ca3">Your Listing</h1>
   </div>
 
-  <div class="row g-4">
+  <div class="row g-4" style="min-height: 28.6rem">
     @if(products) { @for(prd of products; track prd.id) {
     <div class="col-lg-4 col-md-6">
       <app-card (deleteElm)="getData()" [products]="prd"></app-card>

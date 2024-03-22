@@ -12,16 +12,16 @@ import { AddListingService } from '../../Service/AddListing/add-listing.service'
   styleUrl: './fav-listing.component.css',
 })
 export class FavListingComponent implements OnInit {
-  products: any;
-  constructor(
-    private listingService: AddListingService
-  ) {}
+  products: any = [];
+  constructor(private listingService: AddListingService) {}
   ngOnInit(): void {
     this.getData();
   }
   getData() {
     this.listingService.GellAllareas().subscribe({
       next: (data) => {
+        console.log(data);
+
         this.products = data;
       },
       error: (err) => {

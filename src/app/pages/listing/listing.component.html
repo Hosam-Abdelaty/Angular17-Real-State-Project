@@ -7,10 +7,10 @@
       (input)="getsearch($event)"
       placeholder="Search by Address..."
     />
-
     <div class="container mt-5">
       <div class="d-flex flex-wrap">
-        @for(u of stateSearched ;track u.id){
+        @if (stateSearched) { @for(u of stateSearched ;track u.id){
+
         <div class="Card h-100 border rounded-5 m-2 p-4">
           <span class="heart-icon" (click)="addToFavorites(u)">
             @if (u.Favourite) {
@@ -39,6 +39,8 @@
             </div>
           </a>
         </div>
+        } }@else {
+        <h3>loading...</h3>
         }
       </div>
     </div>

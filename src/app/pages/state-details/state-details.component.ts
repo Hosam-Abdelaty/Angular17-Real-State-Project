@@ -18,12 +18,12 @@ export class StateDetailsComponent implements OnInit{
   Bedrooms = "";
   Category = "";
   stateSearched: any;
-  
+
   constructor(myActivated: ActivatedRoute,private stateServ:AddListingService){
     this.State = myActivated.snapshot.params["state"];
     this.Bedrooms = myActivated.snapshot.params["bedrooms"];
     this.Category = myActivated.snapshot.params["category"];
-  } 
+  }
   // searched:any = [];
 
 //  async getData(){
