@@ -37,7 +37,7 @@ export class AddListingComponent implements OnInit {
           this.myRegValid.patchValue(data);
         },
         error: (err) => {
-          console.log(err);
+console.log(err);
         },
       });
     }
@@ -74,25 +74,22 @@ export class AddListingComponent implements OnInit {
         })
         .subscribe({
           next: (data) => {
-            console.log(data);
             this.route.navigateByUrl('yourListing');
           },
           error: (err) => {
-            console.log(err);
+console.log(err);
           },
         });
     } else {
       if (!this.url) {
-        console.error('No file selected');
+console.error('No file selected');
         return;
       }
 
       const formData = new FormData();
       formData.append('file', this.url);
-      console.log(this.url.name);
 
       if (this.myRegValid.valid) {
-        console.log(this.myRegValid.value);
         await this.listingService
           .addListing({ ...this.myRegValid.value, image: this.url.name })
           .subscribe({
@@ -101,7 +98,7 @@ export class AddListingComponent implements OnInit {
             }
           })
       } else {
-        console.log('Data is invalid');
+console.log('Data is invalid');
       }
     }
   }

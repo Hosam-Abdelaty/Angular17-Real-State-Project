@@ -21,24 +21,11 @@ export class YourListingComponent implements OnInit {
     this.getData();
   }
 
-  // products = [{
-  //   "id": "1",
-  //   "title": "Modern Apartment in Downtown",
-  //   "description": "Beautiful modern apartment located in the heart of downtown. Close to restaurants, shops, and public transportation.",
-  //   "price": "$2000",
-  //   "bedrooms": 2,
-  //   "bathrooms": 1,
-  //   "sqft": 1000,
-  //   "location": "103 Wright Court Burien, NY 98168",
-  //   "state": "NY",
-  //   "image": "https://source.unsplash.com/featured/?apartment",
-  //   "category": "Popular"
-  // }];
+
 
   getData() {
     this.service.getAll().subscribe({
       next: (data) => {
-        console.log(data);
         return (this.products = data);
       },
       error: (err) => {

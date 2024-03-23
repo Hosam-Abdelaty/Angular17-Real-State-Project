@@ -38,14 +38,12 @@ export class AddListingService {
     return this.http.get(this.listingsDB + '?state=' + state);
   }
   getAreaById(id: any) {
-    console.log(this.http.get(this.listingsDB + '?id=' + id));
     return this.http.get(this.listingsDB + '?id=' + id);
   }
   updateAllListing(id: any, body: any) {
     return this.http.patch(`${this.listingsDB}/${id}`, body);
   }
   postSearchedData(sharedDataArr: any) {
-    // console.log(sharedDataArr)
     return this.http.post(this.searchDB, sharedDataArr);
   }
   getSearchedData(state: any, bedrooms: any, category: any) {

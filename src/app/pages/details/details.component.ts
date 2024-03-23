@@ -22,9 +22,9 @@ export class DetailsComponent implements OnInit {
   Data: any;
   id = 0;
   constructor(
-    myActivated: ActivatedRoute, 
-    private myServ: AddListingService, 
-    private bookingServ: BookingService, 
+    myActivated: ActivatedRoute,
+    private myServ: AddListingService,
+    private bookingServ: BookingService,
     private route: Router
     ) {
     this.id = myActivated.snapshot.params["id"];
@@ -32,11 +32,10 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.myServ.getAreaById(this.id).subscribe({
       next:(data)=>{
-        console.log(data)
         const [ myobj ]:any = data
         this.Data = myobj;
       },
-      error:(err)=>{console.log(err)}
+error:(err)=>{console.log(err)}
     })
   }
   paymentHandler: any = null;
@@ -46,7 +45,6 @@ export class DetailsComponent implements OnInit {
       key: 'pk_test_51OpCMsKf4kg8q6qsRco6Ws5iIyyN9rWxq90mb55gtoqw9cXte98aGij84DvlPRxrCLENJEIYbGFl0cC6mqFp8QSC003thpNMyt',
       locale: 'auto',
       token: (stripeToken: any) => { // Use an arrow function here
-        console.log(stripeToken);
         // Navigate to the 'bookings' route after payment is completed
         this.route.navigateByUrl('bookings');
       },
@@ -59,10 +57,9 @@ export class DetailsComponent implements OnInit {
 
     this.bookingServ.addBooking(data).subscribe({
       next: (data) => {
-        console.log(data);
       },
       error: (err) => {
-        console.log(err);
+console.log(err);
       },
     });
   }
@@ -79,7 +76,6 @@ export class DetailsComponent implements OnInit {
           key: 'pk_test_51OpCMsKf4kg8q6qsRco6Ws5iIyyN9rWxq90mb55gtoqw9cXte98aGij84DvlPRxrCLENJEIYbGFl0cC6mqFp8QSC003thpNMyt',
           locale: 'auto',
           token: (stripeToken: any) => {
-            console.log(stripeToken);
             alert('Payment has been successful!');
           },
         });
@@ -91,7 +87,6 @@ export class DetailsComponent implements OnInit {
         key: 'pk_test_51OpCMsKf4kg8q6qsRco6Ws5iIyyN9rWxq90mb55gtoqw9cXte98aGij84DvlPRxrCLENJEIYbGFl0cC6mqFp8QSC003thpNMyt',
         locale: 'auto',
         token: (stripeToken: any) => {
-          console.log(stripeToken);
           alert('Payment has been successful!');
         },
       });

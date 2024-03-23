@@ -31,17 +31,13 @@ export class StateDetailsComponent implements OnInit{
 //  }
 
   ngOnInit(): void {
-    // console.log(this.searched);
-    // console.log("2");
-    // console.log(this.stateServ.getSearchedData());
-    // console.log(this.searched)
     this.stateServ.getSearchedData(this.State, this.Bedrooms, this.Category).subscribe({
       next: data => {
         // const [ myObj ]: any = data
         this.stateSearched = data;
       },
       error: err => {
-        console.log(err)
+console.log(err)
       }
     })
   }

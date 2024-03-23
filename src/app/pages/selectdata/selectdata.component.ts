@@ -26,11 +26,9 @@ export class SelectdataComponent implements OnInit{
   ngOnInit(): void {
     this.areasService.GellAllareasbyid( this.State).subscribe({
       next:(data)=>{
-        // console.log(data)
         this.data = data;
-        console.log(data)
       },
-      error:(err)=>{console.log(err)}
+error:(err)=>{console.log(err)}
     })
   }
 }

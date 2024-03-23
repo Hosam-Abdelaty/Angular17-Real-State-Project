@@ -20,12 +20,11 @@ export class FavListingComponent implements OnInit {
   getData() {
     this.listingService.GellAllareas().subscribe({
       next: (data) => {
-        console.log(data);
 
         this.products = data;
       },
       error: (err) => {
-        console.log(err);
+console.log(err);
       },
     });
   }

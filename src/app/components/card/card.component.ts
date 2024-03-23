@@ -24,7 +24,6 @@ export class CardComponent {
     if(confirmDelete) {
       this.service.deleteListing(id).subscribe({
         next: (data) => {
-          console.log(data)
           this.deleteElm.emit();
         },
         error: (err) => {

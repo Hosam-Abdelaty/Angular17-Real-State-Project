@@ -29,7 +29,7 @@ export class ContactUsComponent {
       })
       .then(
         (response) => {
-          console.log('SUCCESS!', response.status, response.text);
+          alert('Email sent successfully !');
         },
         (err) => {
           console.log('FAILED...', err);

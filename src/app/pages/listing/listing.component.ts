@@ -27,28 +27,22 @@ export class ListingComponent implements OnInit {
       next: (data) => {
         this.state = data;
         this.stateSearched = data;
-        console.log(this.state);
       },
       error: (err) => {
-        console.log(err);
+console.log(err);
       },
     });
   }
   getsearch(ev: any) {
-    console.log(ev.target.value);
     this.searched = ev.target.value;
 
-    console.log(this.searched);
-    console.log('alldata', this.state);
 
     this.stateSearched = this.state.filter((el: any) => {
       this.result = el.location
         .toLowerCase()
         .includes(this.searched.toLowerCase());
-      console.log('Got statesWithRooms', this.result);
       return this.result;
     });
-    console.log(this.stateSearched);
   }
   addToFavorites(product: any) {
     if (product.Favourite) {
@@ -63,10 +57,9 @@ export class ListingComponent implements OnInit {
               next: (data) => {
                 this.state = data;
                 this.stateSearched = data;
-                console.log(this.state);
               },
               error: (err) => {
-                console.log(err);
+console.log(err);
               },
             });
           },
@@ -83,10 +76,9 @@ export class ListingComponent implements OnInit {
               next: (data) => {
                 this.state = data;
                 this.stateSearched = data;
-                console.log(this.state);
               },
               error: (err) => {
-                console.log(err);
+console.log(err);
               },
             });
           },
